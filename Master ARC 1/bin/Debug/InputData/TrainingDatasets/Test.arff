@@ -1,0 +1,12 @@
+@relation Test
+
+@attribute text string
+@attribute @@class@@ {BugReport,FeatureRequest,Other}
+
+@data
+'this is a test ',?
+'this app does not work at all ',?
+'I hope the app developers will add a new feature to take pictures on the go ',?
+'I do not like this app ',?
+'Why doesnt this app work Please add this feature ',?
+'I wish there was a better way of taking good pictures ',?
