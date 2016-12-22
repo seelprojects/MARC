@@ -1,0 +1,137 @@
+@relation C__Users_nisha_Desktop_Weka_Test
+
+@attribute text string
+@attribute @@class@@ {BugReport,FeatureRequest,Other}
+
+@data
+'I use this app every day and it runs great.  The latest update though has stopped shows from auto playing.  Super annoying especially when I expect the app to continue playing my kids shows because they are too young to know what to do when it stops.',BugReport
+'idk if this is just happening to me but the tv shows or movies arent loading at all. I have tried downloading the app again and resigning in but nothing is working',BugReport
+'The app is extremely hard to use. I get logged out every single time I leave the app for a while so I have to type in my e-mail and password every time I use it. Whoever is making these updates needs to get fired its just one problem after another.',BugReport
+'Whenever I open the app it signs me out and I have to log in over and over again Time consuming',BugReport
+'For weeks now Netflix on my phone has not been working. I use Netflix on my phone a lot because Im  always on the go. Ive had many problems with it lately. First of all it takes forever for the screen to load when it does eventually load I have to sign in again. But now I cannot watch any shows because it stops loading and kicks me out to with a cannot load movie message. Please fix.',BugReport
+'Is this pure crap even working Ive created an account paid for it and all i get is error 1012. Doesnt even launch What a joke of a developerapp',BugReport
+'I love Netflix...But it would be nice if it worked on my iPad. Even after re-downloading it the app still doesnt open on my iPad.  Im paying money for nothing',BugReport
+'The app wont even load I am so frustrated please fix this so I can continue watching my shows...',BugReport
+'I just want to open it up and put a show on in the background and I have to re-enter my username and password every single time.',BugReport
+'This app fails more than any app I have ever used. It is incredibly inconsistent. it will work fine for a few days and then for the next two weeks it will say ERROR when I try and watch something. Their updates are useless and they improve nothing noticeable or at least nothing important.',BugReport
+'The latest 7.2.5 version of this app seems to have introduced a particular instability with keeping login data. Often things work fine. But if my network is just a little bit flakey and it fails to log in instead of giving me an error and asking to try again itll log me out and then I have to re-enter my login data from scratch - even if Id just done so an hour before.',BugReport
+'The app consistently logs me out of my account for no apparent reason. Sometimes the app will not open into Netflix and stays on the black screen with the red logo for several minutes. I then have to delete the app and re-download. My phone is up to date with most recent OS downloaded and has no problems with other apps.',BugReport
+'Netflix overall is a good app but there is a problem. Every time I go into Netflix it has me sign in Netflix needs to fix this.',BugReport
+'Whenever I open the app it always freezes on the loading screen. I once left it the app open just to see how long it would take. Ten minutes later and still loading. TEN  Doesnt matter how often I delete then download again or refresh the app. Same persistent problem Fix it and Ill change the rating.',BugReport
+'Usually I love netflix but since the recent updates i havent been able to use the app. It just stays on the loading screen even when I have good connection I have left it on for a span of 15 minutes and nothing happens. Im using an iPod please fix this bug.',BugReport
+'I have not been able to use this app in at least a week. It stays on the Netflix screen with the spinning wheel but never gets any further. I use to watch Netflix almost daily and would like this to continue. Please fix the bugs preventing the use of this app.',BugReport
+'Almost everybodys Netflix app is not working Every time I open it it just keeps loading Fix soon or we will report and cancel our membership with you ',BugReport
+'The app used to work well but doesnt anymore. It doesnt even load. I waited several minutes and even shut my iPad down and turned it back on. Nothing. Hey we are paying for Netflix. Please fix the app.',BugReport
+'Worked great but now not a single device I own will connect to Netflix. Will not connect on any PC iPad iPhone Xbox One nothing. Wont even connect when using cellular data. Worse thing is no response from customer service One customer gone...not paying for something that is broken',BugReport
+'Ive been on Netflix for a very long time and I cant believe that the new update doesnt allow me to stream on my iPhone this needs to be fixed Im always watching Netflix and now I cant because its not working. Im not paying for not being able watch.',BugReport
+'When you click on the View Saved ID Card button it crashes over and over again on iPhone 6 Plus.',BugReport
+'Stupid app no one remembers their progressive username and pswd when youre not at home',BugReport
+'I was just trying to install the latest update for this app and it got stuck in an endless download. It wont install all the way I cant delete it I cant try to re-install it. Horrible experience I will likely have to restore my phone to get it off of there',BugReport
+'Been trying to update App for over 24 hrs and now wont load. iPhone 6',BugReport
+'Forget about passbook. When are yall going to update to the iPhone 6 6 6S 6S Its 2015 and been over a year since the updated screen sizes to iPhones. This has to be the last app to update to the new screen sizes. Get it together.',BugReport
+'Go to use it first time and it doesnt recognize my useridpassword. Quality stuff right here they need to get their act together. Worthless',BugReport
+'The same moron who designed their website must have also designed this app.  It is impossible to do anything because every time I attempt to sign in it says my password is incorrect.  So I go through the security process to reset my password it lets me change it then when I try to log in my password does not match their records.  It is ridiculous and useless.  Ive spoken to customer service about it explained the issue in countless surveys...  and nothing.',BugReport
+'Just in time for the new Ohio law that allows me to use this the app will not recognize User Name and Password. Prompts for reset and on the second time it apparently recognizes the Password but will not open.',BugReport
+'Kicks me out every time I click the sign in button. Got tired of trying. Deleting it today. Website is just as easy.',BugReport
+'Just switched to Progressive downloaded the app and it wont even open. Not feeling so great about the switch currently.',BugReport
+'Every time I try to log in it closes down.  Even tried deleting the app and reinstalling and still the same problem.',BugReport
+'Was looking forward to having this app. Downloaded it and tried to login and the app just closes down. I tried three times and as soon as I hit login the whole thing shuts down. I just deleted the app. Disappointed.',BugReport
+'Ever since the update it does not let me log in. It crashes after i click log in. Needs a fix  No point in having the app if i just have to go to the full site to make a payment why because it crashes when trying to log in',BugReport
+'Every time I try to log in the app shuts out',BugReport
+'At sign in app tells me my policy isnt current and makes me access the website which shows the same cancelled policy. Cancelled boat policy a year ago because the boat was sold. I cant get past the login message to see if I can access my active motorcycle policy.  Bet I cant... Just plain stupid... Must have skipped alpha and beta testing.  Fix it.',BugReport
+'It will not let me pay my bill.  Keeps giving me a message.  Fix it please',BugReport
+'I cant log in to my account. Getting in just fine on the mobile browser but the app does not recognize my information. Please fix',BugReport
+'This is a wonderful app however a lot of times the picture displayed for the song that is currently playing is not the picture that is supposed to be displayed. Its not that big of a deal but I do find it to be a bit annoying.',BugReport
+'Latest update renders the app useless. Thanks a lot Spotify App crashes each time I go to play a song. Get it fixed',BugReport
+'Not sure why I lost all of my playlists on my App this is not good since Im paying for premium no commercials and use my app for classes.',BugReport
+'My iPod unsyncs at the worst times possible to tell me I have synced 3 devices so there unsync my iPod so NO music in the woods today your SCREWED haha have a great day love Spotify. ',BugReport
+'I tried to get a ride and didnt accept my card.',BugReport
+'Im not sure whats going on but Ive had an issue using the Uber app twice where after requesting a driver and then my phone completely shuts down. The worst part is I cant restart the phone without having to plug it in to a power source. Which I obviously dont have on me. Luckily the drivers have found me but it still leaves me without a phone that works. Uber please look into this. ',BugReport
+'the app is not loading today I dont know why. fix it',BugReport
+'So Ive been using uber for quite some time now. Basically all of a sudden every time I try to login it keeps telling me invalid usernamepassword but Ive reset my password multiple times as well as creating a new account. I use uber often so its kind of a bummer for me. Is anyone else having this issue Uber please fix your application thank you',BugReport
+'Really simple. It kept asking to verify my payment and when I did it said success and then a message would pop up to verify payment again when I tried to get an uber. Super frustrating and was eventually rendered useless. Had to uninstall the app. Please fix',BugReport
+'Normally this app works fast and easy but today I havent been able to get a ride and it shows vehicles near me. When I try and cancel it says there is a network error. Please fix this mess. Because of it Ive been on public transportation all day and its in the single digits today ',BugReport
+'App keeps crashing this is suppose to be a technology company',BugReport
+'I had recently had my payment info change  updated all my accounts . For whatever reason the ber app would say that my account info was updated. Whenever I went to use it it always said my card info was invalid it never was-I even double checked',BugReport
+'trying to get a fare estimate but it just keeps changing my pickup location - frustrating',BugReport
+'After installing the app I could not get to the main screen. It was freezing at the Uber animation. Tried reinstalling a couple of times but still the same. Really needs to be fixed and needs to be optimized.',BugReport
+'Wont finish installing after download',BugReport
+'It was not accepting my card when I try to pay.',BugReport
+'I cant open app. Ive deleted it to download it again. No luck. I started using regular cabs.',BugReport
+'As advertised the app is not allowing me to pay with amex points.',BugReport
+'Wont take much of your time reading this one star review. Since the last pokball logo update the ber app had been completely useless -- including taking all the drivers in my area offline. As a temporary disabled person this service was providing crucial for me but became more of a burden then a taxi.',BugReport
+'Uber is great. The only problem that I see is that in San Francisco for some reason the phone GPS is not accurate and doesnt work as expected and this affects  Uber app as well. In other words your current location which can be your pickup location is not always correct. Sometimes it shows me in a street next to where I actually am. ',BugReport
+'Updated the app and now I cant seem to find it.. The app icon myself and others have grown to know and trust appears to be missing. Should I be suspicious of and not get into cars displaying to original recognisable U I have yet to see a car displaying the new backwards c logo. In all seriousness the pointless and needless rebranding of an iconic app icon is unnecessary and confusing. uberfail',BugReport
+'Fare estimator shows 26-33 and driver charges 70. Uber justifies taking a double the miles route. We badly need Lyft and other providers. Uber is using its monopoly to cheat customers.',BugReport
+'App randomly doesnt work which makes it unreliable.',BugReport
+'Whats with the tiny subtitles Im 28 and can only read them if my phones within 6 inches of my face. What about when youre at the gym or somewhere else where your phone is propped up I understand the concern about still being able to see whats going on but seeing the action means nothing if I dont know what theyre saying. At the very least larger text should be optional.',FeatureRequest
+'Love love love the app and Netflix its self but I would love it even more if it had an option to download the movies or shows onto the app so you could watch without using data or wifi. I know my kids would love this for long car rides and I would too.',FeatureRequest
+'I would love if the app supported continuous play like the desktop version of the site does. I also wish it had a skip forward 10 seconds in addition to the skip back 10 seconds. I much prefer the HBO Go and Amazon Prime control features center of screen easy to press buttons rather than bottom left of screen tiny buttons.',FeatureRequest
+'I love this app. It keeps me entertained but it needs more of Vampire diaries and the Originals.  Please the the juiciest cherry on top.',FeatureRequest
+'What happened to my list Where are the reviews These are important to me. My list has been buried so far I have to dig to find it and I cant get to reviews at all. Crap.',FeatureRequest
+'Netflix has a good service plenty to watch my one and only complaint is there is no continuous playback on the iPhone if they added that it would be perfect',FeatureRequest
+'There are entire categories based on shows Ive never watched. Also why cant I stayed logged in anymore',FeatureRequest
+'I dont know if its the update or what but i hate that I have to sign in every time I use Netflix on top of the error cant play movie half way thru is becoming a bit much  ',FeatureRequest
+'App is ruined due to lack of offline content capability.  If Amazon can do it it is clearly possible.  Please make this enhancement that would greatly improve the usability for your subscribers.',FeatureRequest
+'I love Netflix but the app desperately needs an update. We need more browsing options',FeatureRequest
+'Can you PLEASE make it so the app doesnt ask me to login every time it opens That would be super sweet thanks...',FeatureRequest
+'And why is it only on Apple products that you can only view your List in on direction. Why cant I go from the end',FeatureRequest
+'I loved watching anime and other shows on Netflix but with the new update the anime are English I would rather have the subtitles than the voice overs I keep getting logged out..',FeatureRequest
+'There should be an auto play feature when playing a tv series Hulu has that feature so should Netflix  just saying',FeatureRequest
+'Also really needs a skip 10 seconds forward button from when I skip backwards too far.',FeatureRequest
+'Add ID touch please',FeatureRequest
+'No support for iPhone 6 Plus large screen yet AGAIN. I would like to see many features from the web to show up.',FeatureRequest
+'This app is pretty good and works as advertised. I suggest adding 3D Touch support and let us access our ID cards right from the home screen faster',FeatureRequest
+'Pretty basic app - just does what the website does.  Would be nice if it supported some actual iPhone features like Touch ID or Apple Wallet.',FeatureRequest
+'TouchID please for more secure and faster login  Thanks.',FeatureRequest
+'Very nice app. Also easy to navigate. I do wish there was a home insurance category within this app that way one can manage both auto and home insurance easily.',FeatureRequest
+'Needs to be optimized for iOS 9',FeatureRequest
+'This really is missing a lot of functionality that is available on the Progressive web sites.  It should have all of it included.  In addition it is lacking polish and the user workflows are probably a but more complex and muddled than what they should be.  Last for my feature request Id like to see a widget for notification center developed that would place my insurance information in a panel in notification center so that I can show it without unlocking my phone to access the Progressive app.',FeatureRequest
+'would have been useful to have the insurance card in there dont you think',FeatureRequest
+'Would love to be able to add both renters and car insurance cards in passbook. Ive been looking for new updates and nothing. Guess Ill have to carry the card using extra space in my wallet',FeatureRequest
+'I love progressive and the app I just wish that they accepted American Express cards an do auto bill pay even on pre-paid cards other major companies already does and it makes life much easier',FeatureRequest
+'This app is missing a few things like passbook integration but perhaps the most vexing is the lack of integration with TouchID and iCloud Keychain. I use randomized passwords so extracting them from the Settings app is more work than Im willing to put in considering the mobile site is compatible since its accessed through Safari. Whats worse I cant actually access the mobile site since links all redirect to the app. I will be deleting the app until this is fixed.',FeatureRequest
+'Can you add the feature to view claim activity and make changes to policy within the app. Also touch ID ',FeatureRequest
+'I would love if this app were optimized for the iPhone 6 Plus as well as the ability to log in using TouchID. Would also be awesome if you could store your insurance card in Passbook.',FeatureRequest
+'I am a new Progressive customer but an avid Apple user. I think this app functions mediocre but fails to take advantage of the tools the iPhone possess. I feel that I should be able to optional login to the account with the Touch ID after the initial login with username and password. Also my ID card should be accessible from Passbook instead of or in addition to the app.',FeatureRequest
+'Its a great app. It has everything you need. But I really wish it would give you the option to view your snapshot overview',FeatureRequest
+'My only beef is that it should not send me to my browser. All activity should take place within the app.',FeatureRequest
+'Great app would like to be able to add my ID card to passbook so I could have it with all the other cards.',FeatureRequest
+'This app looks nice but is missing some key components customers need. First thing PAYMENT DUE DATE - You can see the amount due but no where can I find the due date.',FeatureRequest
+'The app is amazing I havent had any problems but I have a few suggestions to add to the mobile version.  I really would love to see a sleep timer and alarm function added to this app. I am very pleased with my experience and keep doing a good job',FeatureRequest
+'On the iPhone you can look at and re-sort up next songs but that functionality is missing on the iPad version.  ',FeatureRequest
+'Great appneeds to be able to play the songs you want when ever you want tho...',FeatureRequest
+'I really love Spotify for me is the best app. I just would like to be able to play more than one playlist at the same time in random like a DJ option or something. But the app is cool and more when you go in a road trip you dont have signal but you have your favorites play lists downloaded and you dont have interruptions  ',FeatureRequest
+'Needs Queue All my other devices have it and it takes away from the overall experience. ',FeatureRequest
+'Minor but I wish that it showed ALL the albumssongs by an artist. 2 of my favorites dont have an album or two on here and I have to listen to them on YouTube. ',FeatureRequest
+'Hi im a premium user hi please update the app i hope we can reorder playlist by playlist  so my older playlist i can put on top of my playlist please please',FeatureRequest
+'I love Spotify I would love it better if they could make it for Apple Watch',FeatureRequest
+'I wish it didnt have a limit to amount of saved songs but I love this app. Must have for sure.',FeatureRequest
+'All I ask for is more skips',FeatureRequest
+'I understand they have to get money for the music but theres SO many. Other than that I wish the app was like the desktop version in the sense that you get to choose the song. Premium is great though no complaints about that its just the free version. A',FeatureRequest
+'There should be an option to make accounts fully private  to block users who we dont want following us.',FeatureRequest
+'Please make it so that I can organize my playlist just like how you can to songs in the playlist.',FeatureRequest
+'My only suggestion to the developers is to give users the option of minimizing their home screens- removal of shows and radio stations for example. Really the search bar should be able to cover everything on that list. I actually almost exclusively make selections from my recently played list since it goes back forever.',FeatureRequest
+'I wish you took the shuffle play out though',FeatureRequest
+'I do miss the option to see WHO is following your playlists. It doesnt seem to be available any longer Other than that pretty darn perfect.',FeatureRequest
+'Why does uber refuse to add a tip option on the app I dont usually have cash on me  I hate stiffing my driver',FeatureRequest
+'It would be nice to rate driver and their car. All my drivers have been great however some of the cars have not been so good. ',FeatureRequest
+'I dont like the fact that there is no customer service phone number or no one to assist you to let you know an estimated cost per mile. They want a credit card number up front before the driver even comes then you have no clue how much your ride is going to cost so when you check your credit card statement its a chance that you will have a huge surprise. Please work on that because im discouraged from even using these services because I dont know what Im getting myself into.',FeatureRequest
+'I really like the app.  But there is no option to choose from toll roads or not.  You are charged more for using tolls and my driver never gives me the option to not use tolls.  They just use the tolls automatically because it charges more and they are receiving profit.  I would really appreciate it if there was an option in the app to use tolls or not based on each ride.',FeatureRequest
+'Also- I rarely have cash on me  having worked in service most of my life feel incredibly guilty not being able to tip these guysgals in app. Seems like it would be a very easy fix  would make drivers very happy.',FeatureRequest
+'Seem to be lacking details.  Cmon Uber.  It doesnt take all that long to write proper release notes.  Please consider giving us more than just a cut and paste template in future releases.',FeatureRequest
+'I love the uber pool option Limit the pickups to two and prioritize your pick ups There should never be a rider 1st in last out....it literally doubles the travel time that was estimated',FeatureRequest
+'For the love of all that is holy please add a tip feature for the drivers',FeatureRequest
+'Please change the logo I absolutely hate seeing it on my phone. Its just off putting.',FeatureRequest
+'Ive been using uber for over two years now and my experience has been mostly positive. My one big issue is that Uber needs to have the option of letting you choose only the drivers that dont mind if a small dog rides with you. I always text the driver right after I get a car that I will have a small dog with me and most of the time the drivers are okay with it but Ive had bad instances where the driver never responds to the text I send then when he gets to me yells at me and tells me he cant take me because of the dog. If there was the option for users to only pick drivers who are dog friendly that would be awesome. The other complain I have is drivers canceling once they know where youre going. I always put addresses in and if they see Im going to Brooklyn they usually cancel.',FeatureRequest
+'It would be nice to offer a tip option like Lyft does.',FeatureRequest
+'Also need to be able to rate in 10ths. The drop from 5 to 4 is to step and to punitive.',FeatureRequest
+'Great experience. Didnt have to worry about having cash or credit on me. But recommend if uber can add some sort of identifier show who has car seats for toddlers instead of contacting the driver.',FeatureRequest
+'I want release notes.....1 star',FeatureRequest
+'Why isnt the color of drivers car displayed Im in downtown Chicago and expecting an Accord. Ok every 4th car is an Accord. Also what is the point of showing me the drivers rating after Ive confirmed the ride I should be able to see the ratings on the little cars driving around and choose whichever one Id like based on the ratings. Otherwise whats the point If a 4.2 is on the way to get me oh well I have to accept that I may have a crappy experience.',FeatureRequest
+'Great But need a way to tip drivers thru the app',FeatureRequest
+'Every driver has been genuinely friendly and cars really clean. From using the App...the drivers... getting where youre going quick...and the price - seamless. Really dont like the new logo would be great if they went to their original branding. Much more appealing particularly to potential new users.',FeatureRequest
+'If you are requesting an UberX driver to go under 5 miles in non rush hour and not tipping think about the fact that that Smartphone cell phone service Car Payment Insurance Wear and Tear and other unforeseen costs are all coming at the drivers expensive. At least be courteous enough to consider leave a small tip even 3 is larger than the amount you driver just made if the drive is in non surge hours.',FeatureRequest
+'This app has changed the way I travel for ever. I love the affordable competitive price. I just wish there was a way to tip.',FeatureRequest
+'I love uber and think its fantastic but uberx drivers should have to pass a test so that they know the place.',FeatureRequest
+'I wish there were an easier way to specify apartment buildings  addresses without having to personally calltext your driver.',FeatureRequest
