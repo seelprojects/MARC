@@ -23,6 +23,8 @@ using System.Diagnostics;
 
 namespace Master_ARC_1
 {
+
+
     public partial class AppIdClassification : Form
     {
         //Gmail = 422689480;
@@ -72,7 +74,6 @@ namespace Master_ARC_1
             imagelist.Images.Add(Image.FromFile(directoryName + "\\Images\\ic_question.png"));
             imageList.ImageSize = new Size(50, 50);
 
-
             numberOfReviewsCombo.Items.Add(50); numberOfReviewsCombo.Items.Add(100); numberOfReviewsCombo.Items.Add(150); numberOfReviewsCombo.Items.Add(200); numberOfReviewsCombo.Items.Add(250);
             numberOfReviewsCombo.Items.Add(300); numberOfReviewsCombo.Items.Add(350); numberOfReviewsCombo.Items.Add(400); numberOfReviewsCombo.Items.Add(450); numberOfReviewsCombo.Items.Add(500);
             numberOfReviewsCombo.SelectedIndex = 0;
@@ -80,13 +81,56 @@ namespace Master_ARC_1
             boWordsClassification.Checked = true;
             defaultTraining.Checked = true;
 
+            supportVectorCheckbox.Checked = true;
+
             boWordsClassification.CheckedChanged += boWClassification_CheckedChanged;
             defaultTraining.CheckedChanged += DefaultTraining_CheckedChanged;
             boFramesClassification.CheckedChanged += boFramesClassification_CheckedChanged;
             customTraining.CheckedChanged += CustomTraining_CheckedChanged;
 
+            naiveBayesCheckbox.CheckedChanged += NaiveBayesCheckbox_CheckedChanged;
+            supportVectorCheckbox.CheckedChanged += SupportVectorCheckbox_CheckedChanged;
         }
 
+        /// <summary>
+        /// Handle click event for support vector machine checkbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SupportVectorCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (supportVectorCheckbox.Checked && naiveBayesCheckbox.Checked)
+            {
+                naiveBayesCheckbox.Checked = false;
+            }
+            else
+            {
+                naiveBayesCheckbox.Checked = true;
+            }
+        }
+
+        /// <summary>
+        /// Handle click event for naive bayes checkbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NaiveBayesCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (naiveBayesCheckbox.Checked && supportVectorCheckbox.Checked)
+            {
+                supportVectorCheckbox.Checked = false;
+            }
+            else
+            {
+                supportVectorCheckbox.Checked = true;
+            }
+        }
+
+        /// <summary>
+        /// Handle click event for bag of words checkbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void boWClassification_CheckedChanged(object sender, EventArgs e)
         {
             if (boWordsClassification.Checked && boFramesClassification.Checked)
@@ -99,6 +143,11 @@ namespace Master_ARC_1
             }
         }
 
+        /// <summary>
+        /// Handle click event for bag of frames checkbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void boFramesClassification_CheckedChanged(object sender, EventArgs e)
         {
             if (boFramesClassification.Checked && boWordsClassification.Checked)
@@ -111,6 +160,11 @@ namespace Master_ARC_1
             }
         }
 
+        /// <summary>
+        /// Handle custom training file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CustomTraining_CheckedChanged(object sender, EventArgs e)
         {
             if (defaultTraining.Checked && customTraining.Checked)
@@ -123,6 +177,11 @@ namespace Master_ARC_1
             }
         }
 
+        /// <summary>
+        /// Handle default training file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DefaultTraining_CheckedChanged(object sender, EventArgs e)
         {
             if (defaultTraining.Checked && customTraining.Checked)
@@ -135,6 +194,11 @@ namespace Master_ARC_1
             }
         }
 
+        /// <summary>
+        /// Import Reviews
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void importReviews_Click(object sender, EventArgs e)
         {
 
@@ -158,6 +222,11 @@ namespace Master_ARC_1
             bw.RunWorkerAsync();
         }
 
+        /// <summary>
+        /// Retrive user reviews Thread
+        /// </summary>
+        /// <param name="appId"></param>
+        /// <param name="numPage"></param>
         private void RetrieveUserReviews(string appId, int numPage)
         {
             for (int i = 1; i <= numPage; i++)
@@ -173,6 +242,10 @@ namespace Master_ARC_1
             }
         }
 
+
+        /// <summary>
+        /// Update control for after importing user reviews
+        /// </summary>
         private void RetrieveUserReviewsUpdateControl()
         {
             reviewListBox.DataSource = null;
@@ -183,6 +256,13 @@ namespace Master_ARC_1
             numberOfReviews.Text = userReviews.Count() + "  Reviews Imported ";
         }
 
+
+        /// <summary>
+        /// Make server call to get the user reviews
+        /// </summary>
+        /// <param name="appID"></param>
+        /// <param name="page"></param>
+        /// <returns></returns>
         private List<string> makeServerCall(string appID, int page)
         {
             List<string> allReviews = new List<string>();
@@ -226,6 +306,12 @@ namespace Master_ARC_1
             return allReviews;
         }
 
+
+        /// <summary>
+        /// Handle classify selected review
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void classifyCurrentReview_Click(object sender, EventArgs e)
         {
             if (customTraining.Checked && !File.Exists(trainingFilePath.Text))
@@ -236,7 +322,13 @@ namespace Master_ARC_1
             {
                 load.Show();
                 var bwClassifyCurrent = new BackgroundWorker();
-                bwClassifyCurrent.DoWork += (o, args) => classifyCurrentUserReview(singleUserReview, customTraining.Checked ? trainingFilePath.Text : null);
+                bwClassifyCurrent.DoWork += (o, args) 
+                    => classifyCurrentUserReview(
+                        singleUserReview, 
+                        customTraining.Checked ? trainingFilePath.Text : null, 
+                        supportVectorCheckbox.Checked ? ClassifierName.SupportVectorMachine : ClassifierName.NaiveBayes
+                        );
+
                 bwClassifyCurrent.RunWorkerCompleted += (o, args) => classifyCurentUserReviewUpdateControl(singleUserReview);
                 bwClassifyCurrent.RunWorkerAsync();
             }
@@ -247,7 +339,7 @@ namespace Master_ARC_1
         /// </summary>
         /// <param name="singleUserReviewSentences"></param>
         /// <param name="trainingFilePath"></param>
-        private void classifyCurrentUserReview(List<string> singleUserReviewSentences, string trainingFilePath)
+        private void classifyCurrentUserReview(List<string> singleUserReviewSentences, string trainingFilePath, ClassifierName classifierName)
         {
 
             allClassification = new List<string>();
@@ -272,11 +364,9 @@ namespace Master_ARC_1
 
                     BeginInvoke(new MethodInvoker(updateLoadingTextClassifier));
 
-
                     try
                     {
-                        classifier = new WekaClassifier.WekaClassifier(listOfReviewsBoF, trainingFilePath, Application.StartupPath);
-
+                        classifier = new WekaClassifier.WekaClassifier(listOfReviewsBoF, trainingFilePath, Application.StartupPath, classifierName);
 
                         foreach (string data in classifier.AllClassification)
                         {
@@ -304,7 +394,7 @@ namespace Master_ARC_1
                 BeginInvoke(new MethodInvoker(updateLoadingTextClassifier));
                 try
                 {
-                    classifier = new WekaClassifier.WekaClassifier(filteredReviews, trainingFilePath, Application.StartupPath);
+                    classifier = new WekaClassifier.WekaClassifier(filteredReviews, trainingFilePath, Application.StartupPath, classifierName);
 
                     foreach (string data in classifier.AllClassification)
                     {
@@ -416,11 +506,22 @@ namespace Master_ARC_1
         /// <param name="e"></param>
         private void browseTrainingArff_Click(object sender, EventArgs e)
         {
-            DialogResult result = openTrainingFileDialog.ShowDialog();
-            if (result == DialogResult.OK)
+            OpenFileDialog fdlg = new OpenFileDialog();
+            fdlg.InitialDirectory = System.IO.Directory.GetCurrentDirectory() + "\\InputData\\TrainingDatasets";
+            fdlg.Filter = "Arff Files (*.arff)|*.arff";
+            fdlg.FilterIndex = 2;
+            fdlg.RestoreDirectory = true;
+            if (fdlg.ShowDialog() == DialogResult.OK)
             {
-                trainingFilePath.Text = openTrainingFileDialog.FileName.ToString();
+                trainingFilePath.Text = fdlg.FileName;
             }
+
+
+            //DialogResult result = openTrainingFileDialog.ShowDialog();
+            //if (result == DialogResult.OK)
+            //{
+            //    trainingFilePath.Text = openTrainingFileDialog.FileName.ToString();
+            //}
         }
 
         /// <summary>
@@ -496,7 +597,13 @@ namespace Master_ARC_1
                     if (userReviews.Count != 0)
                     {
                         var bwClassifyAllAndExport = new BackgroundWorker();
-                        bwClassifyAllAndExport.DoWork += (o, args) => classifyAllReviewsAndExport(userReviews, customTraining.Checked ? trainingFilePath.Text : null);
+                        bwClassifyAllAndExport.DoWork += (o, args)
+                            => classifyAllReviewsAndExport
+                            (
+                                userReviews, 
+                                customTraining.Checked ? trainingFilePath.Text : null,
+                                supportVectorCheckbox.Checked ? ClassifierName.SupportVectorMachine : ClassifierName.NaiveBayes
+                                );
                         bwClassifyAllAndExport.RunWorkerCompleted += (o, args) => classifyAllAndExportUpdateControl(customTraining.Checked ? trainingFilePath.Text : null);
                         bwClassifyAllAndExport.RunWorkerAsync();
                     }
@@ -510,7 +617,7 @@ namespace Master_ARC_1
         /// </summary>
         /// <param name="userReviews"></param>
         /// <param name="trainingFilePath"></param>
-        private void classifyAllReviewsAndExport(List<string> userReviews, string trainingFilePath)
+        private void classifyAllReviewsAndExport(List<string> userReviews, string trainingFilePath, ClassifierName classifierName)
         {
             WekaClassifier.WekaClassifier classifier;
             allClassification = new List<string>();
@@ -523,8 +630,6 @@ namespace Master_ARC_1
                 //if server test passes (returns more than 0 frames) then proceed with frame extraction.
                 if (frameNetServerTest.output.Count != 0)
                 {
-
-
 
                     listOfReviewsBoF = new List<List<string>>();
                     currentReviewIndex = 0;
@@ -540,14 +645,13 @@ namespace Master_ARC_1
 
                     try
                     {
-                        classifier = new WekaClassifier.WekaClassifier(listOfReviewsBoF, trainingFilePath, Application.StartupPath);
+                        classifier = new WekaClassifier.WekaClassifier(listOfReviewsBoF, trainingFilePath, Application.StartupPath, classifierName);
                         
 
                         foreach (string data in classifier.AllClassification)
                         {
                             allClassification.Add(data);
                         }
-
 
 
                         StreamWriter brWriter = new StreamWriter(outputFilePath.Text + "\\Bug Report Output.txt");
@@ -576,14 +680,6 @@ namespace Master_ARC_1
                         frWriter.Close();
                         otWriter.Close();
 
-                        //using (StreamWriter w = File.AppendText(outputFilePath.Text + "\\output.txt"))
-                        //{
-                        //    for (int i = 0; i < userReviews.Count; i++)
-                        //    {
-                        //        w.WriteLine("'" + userReviews.ElementAt(i) + "', " + allClassification.ElementAt(i));
-                        //    }
-                        //}
-
                     }
                     catch (Exception e)
                     {
@@ -601,19 +697,16 @@ namespace Master_ARC_1
                     filteredReviews.Add(FilterText(review));
                 }
 
-
                 BeginInvoke(new MethodInvoker(updateLoadingTextClassifier));
                 try
                 {
-                    classifier = new WekaClassifier.WekaClassifier(filteredReviews, trainingFilePath, Application.StartupPath);
+                    classifier = new WekaClassifier.WekaClassifier(filteredReviews, trainingFilePath, Application.StartupPath, classifierName);
 
-                    
 
                     foreach (string data in classifier.AllClassification)
                     {
                         allClassification.Add(data);
                     }
-
 
                     StreamWriter brWriter = new StreamWriter(outputFilePath.Text + "\\Bug Report Output.txt");
                     StreamWriter frWriter = new StreamWriter(outputFilePath.Text + "\\Feature Request Output.txt");
@@ -660,16 +753,25 @@ namespace Master_ARC_1
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void updateLoadingSingleReviewFrames()
         {
             load.TextBoxValue = "Retrieving Frame " + currentReviewIndex + " of " + singleUserReview.Count();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void updateLoadingTextFrames()
         {
             load.TextBoxValue = "Retrieving Frame " + currentReviewIndex + " of " + userReviews.Count();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void updateLoadingTextClassifier()
         {
             load.TextBoxValue = "          Classifying";
@@ -778,7 +880,5 @@ namespace Master_ARC_1
             {
             }
         }
-
-
     }
 }

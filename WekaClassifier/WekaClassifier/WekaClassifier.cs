@@ -18,6 +18,13 @@ using weka.filters.unsupervised.attribute;
 
 namespace WekaClassifier
 {
+    public enum ClassifierName
+    {
+        SupportVectorMachine,
+        NaiveBayes
+    }
+
+
     public class WekaClassifier
     {
 
@@ -35,23 +42,40 @@ namespace WekaClassifier
         /// This is the constructor for BOW single review classification
         /// </summary>
         /// <param name="singleReviewBOW"></param>
-        public WekaClassifier(List<string> inputBoWList, string trainingFilePath, string directoryName)
+        public WekaClassifier(List<string> inputBoWList, string trainingFilePath, string directoryName, ClassifierName classificationName)
         {
             ConstructBOWArffFile(inputBoWList, directoryName);
-            //FilteredNaiveBayes("BOW", trainingFilePath, directoryName);
-            FilteredSVM("BOW", trainingFilePath, directoryName);
-
+            switch (classificationName)
+            {
+                case ClassifierName.SupportVectorMachine:
+                    FilteredSVM("BOW", trainingFilePath, directoryName);
+                    break;
+                case ClassifierName.NaiveBayes:
+                    FilteredNaiveBayes("BOW", trainingFilePath, directoryName);
+                    break;
+                default:
+                    break;
+            }
         }
 
         /// <summary>
         /// This is the constructor for BOF  user reviews.
         /// </summary>
         /// <param name="inputFramesList"></param>
-        public WekaClassifier(List<List<string>> inputBoFList, string trainingFilePath, string directoryName)
+        public WekaClassifier(List<List<string>> inputBoFList, string trainingFilePath, string directoryName, ClassifierName classificationName)
         {
             ConstructFramesArffFile(inputBoFList, directoryName);
-            //FilteredNaiveBayes("BOF", trainingFilePath, directoryName);
-            FilteredSVM("BOF", trainingFilePath, directoryName);
+            switch (classificationName)
+            {
+                case ClassifierName.SupportVectorMachine:
+                    FilteredSVM("BOW", trainingFilePath, directoryName);
+                    break;
+                case ClassifierName.NaiveBayes:
+                    FilteredNaiveBayes("BOW", trainingFilePath, directoryName);
+                    break;
+                default:
+                    break;
+            }
         }
 
         /// <summary>
@@ -259,11 +283,7 @@ namespace WekaClassifier
 
                 smocls.setOptions(weka.core.Utils.splitOptions("-C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"weka.classifiers.functions.supportVector.Puk -C 250007 -O 1.0 -S 1.0\""));
 
-
                 //smocls.setOptions(weka.core.Utils.splitOptions("-C 1.0 -L 0.0010 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0\""));
-
-
-
 
                 model.setClassifier(smocls);
                 model.buildClassifier(trainInsts);
@@ -277,18 +297,14 @@ namespace WekaClassifier
                                     : cls == 1 ? "Feature Request"
                                     : "Other";
                     tempAllClassification.Add(classification);
-
                 }
+
                 AllClassification = tempAllClassification;
             }
             catch (Exception o)
             {
-
                 error = o.ToString();
             }
         }
-
-
-
     }
 }
