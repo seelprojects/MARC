@@ -553,10 +553,10 @@
             // classifyCurrentReview
             // 
             this.classifyCurrentReview.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.classifyCurrentReview.Location = new System.Drawing.Point(406, 196);
+            this.classifyCurrentReview.Location = new System.Drawing.Point(389, 196);
             this.classifyCurrentReview.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.classifyCurrentReview.Name = "classifyCurrentReview";
-            this.classifyCurrentReview.Size = new System.Drawing.Size(128, 21);
+            this.classifyCurrentReview.Size = new System.Drawing.Size(145, 21);
             this.classifyCurrentReview.TabIndex = 36;
             this.classifyCurrentReview.Text = "Classify Selected Review";
             this.classifyCurrentReview.UseSelectable = true;
