@@ -401,9 +401,9 @@
             this.metroLabel1.Location = new System.Drawing.Point(51, 55);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(90, 15);
+            this.metroLabel1.Size = new System.Drawing.Size(78, 15);
             this.metroLabel1.TabIndex = 43;
-            this.metroLabel1.Text = "Output File Path:";
+            this.metroLabel1.Text = "Output Folder";
             // 
             // outputFilePath
             // 

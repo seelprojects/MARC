@@ -317,6 +317,10 @@ namespace Master_ARC_1
             {
                 MessageBox.Show("Please select a valid training file.");
             }
+            else if(reviewListBox.Items.Count == 0)
+            {
+                MessageBox.Show("Please import comments to classify.");
+            }
             else
             {
                 load.Show();
@@ -585,6 +589,10 @@ namespace Master_ARC_1
             if (customTraining.Checked && !File.Exists(trainingFilePath.Text))
             {
                 MessageBox.Show("Please select a valid training file.");
+            }
+            else if (reviewListBox.Items.Count == 0)
+            {
+                MessageBox.Show("Please import comments to classify.");
             }
             else
             {
