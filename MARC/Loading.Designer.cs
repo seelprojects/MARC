@@ -34,10 +34,11 @@
             // 
             // metroProgressSpinner1
             // 
-            this.metroProgressSpinner1.Location = new System.Drawing.Point(116, 111);
+            this.metroProgressSpinner1.Location = new System.Drawing.Point(77, 45);
+            this.metroProgressSpinner1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.metroProgressSpinner1.Maximum = 100;
             this.metroProgressSpinner1.Name = "metroProgressSpinner1";
-            this.metroProgressSpinner1.Size = new System.Drawing.Size(56, 56);
+            this.metroProgressSpinner1.Size = new System.Drawing.Size(37, 36);
             this.metroProgressSpinner1.TabIndex = 3;
             this.metroProgressSpinner1.UseSelectable = true;
             this.metroProgressSpinner1.Value = 90;
@@ -45,25 +46,26 @@
             // messageLabel
             // 
             this.messageLabel.AutoSize = true;
-            this.messageLabel.Location = new System.Drawing.Point(62, 201);
-            this.messageLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.messageLabel.Location = new System.Drawing.Point(41, 104);
+            this.messageLabel.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(166, 20);
+            this.messageLabel.Size = new System.Drawing.Size(114, 13);
             this.messageLabel.TabIndex = 4;
             this.messageLabel.Text = "Loading... Please Wait";
             // 
             // Loading
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 250);
+            this.ClientSize = new System.Drawing.Size(194, 162);
             this.Controls.Add(this.messageLabel);
             this.Controls.Add(this.metroProgressSpinner1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Loading";
+            this.Padding = new System.Windows.Forms.Padding(13, 39, 13, 13);
             this.Resizable = false;
-            this.Text = "Loading";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.ResumeLayout(false);
             this.PerformLayout();
