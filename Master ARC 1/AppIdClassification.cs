@@ -56,7 +56,6 @@ namespace Master_ARC_1
         string appId;
         int numPage;
         string exceptionMessage;
-        string classification = "Classification";
         List<string> allClassification = new List<string>();
         private ImageList imagelist;
         public AppIdClassification()
@@ -529,45 +528,48 @@ namespace Master_ARC_1
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void browseInputFile_Click(object sender, EventArgs e)
-        {
-            DialogResult result = browseLocalFile.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                inputFilePath.Text = browseLocalFile.FileName.ToString();
-                importLocalReviews();
-                numberOfReviews.Text = userReviews.Count + " Reviews Imported";
-            }
-        }
+        //private void browseInputFile_Click(object sender, EventArgs e)
+        //{
+
+        //    DialogResult result = browseLocalFile.ShowDialog();
+        //    if (result == DialogResult.OK)
+        //    {                
+        //        inputFilePath.Text = browseLocalFile.FileName.ToString();
+        //        importLocalReviews();
+        //        numberOfReviews.Text = userReviews.Count + " Reviews Imported";
+        //    }
+        //}
+
+       
 
         /// <summary>
         /// Import local reviews
         /// </summary>
-        private void importLocalReviews()
-        {
-            userReviews = new List<string>();
-            try
-            {
-                using (StreamReader r = new StreamReader(inputFilePath.Text))
-                {
-                    string line;
-                    while ((line = r.ReadLine()) != null)
-                    {
-                        userReviews.Add(line);
-                    }
-                }
-                reviewListBox.DataSource = null;
-                reviewListBox.Update();
-                reviewListBox.DataSource = userReviews;
-                reviewListBox.Update();
+        //private void importLocalReviews()
+        //{
+        //    userReviews = new List<string>();
+        //    try
+        //    {
+        //        using (StreamReader r = new StreamReader(inputFilePath.Text))
+        //        {
+        //            string line;
+        //            while ((line = r.ReadLine()) != null)
+        //            {
+        //                userReviews.Add(line);
+        //            }
+        //        }
+        //        reviewListBox.DataSource = null;
+        //        reviewListBox.Update();
+        //        reviewListBox.DataSource = userReviews;
+        //        reviewListBox.Update();
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("File Path Error");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("File Path Error");
 
-            }
-        }
+        //    }
+        //}
 
         /// <summary>
         /// Classify all and export click event

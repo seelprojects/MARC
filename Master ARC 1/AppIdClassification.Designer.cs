@@ -37,10 +37,6 @@
             this.numberOfReviewsCombo = new MetroFramework.Controls.MetroComboBox();
             this.reviewListBox = new System.Windows.Forms.ListBox();
             this.numberOfReviews = new MetroFramework.Controls.MetroLabel();
-            this.inputFilePath = new MetroFramework.Controls.MetroTextBox();
-            this.browseInputFile = new MetroFramework.Controls.MetroButton();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.label3 = new System.Windows.Forms.Label();
@@ -94,7 +90,7 @@
             this.appIdTextBox.CustomButton.UseSelectable = true;
             this.appIdTextBox.CustomButton.Visible = false;
             this.appIdTextBox.Lines = new string[0];
-            this.appIdTextBox.Location = new System.Drawing.Point(123, 39);
+            this.appIdTextBox.Location = new System.Drawing.Point(123, 40);
             this.appIdTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.appIdTextBox.MaxLength = 32767;
             this.appIdTextBox.Multiline = true;
@@ -113,7 +109,7 @@
             // importReviews
             // 
             this.importReviews.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.importReviews.Location = new System.Drawing.Point(473, 39);
+            this.importReviews.Location = new System.Drawing.Point(473, 40);
             this.importReviews.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.importReviews.Name = "importReviews";
             this.importReviews.Size = new System.Drawing.Size(61, 24);
@@ -126,7 +122,7 @@
             // 
             this.metroLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(43, 41);
+            this.metroLabel2.Location = new System.Drawing.Point(43, 42);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(78, 19);
@@ -141,10 +137,6 @@
             this.metroPanel1.Controls.Add(this.numberOfReviewsCombo);
             this.metroPanel1.Controls.Add(this.reviewListBox);
             this.metroPanel1.Controls.Add(this.numberOfReviews);
-            this.metroPanel1.Controls.Add(this.inputFilePath);
-            this.metroPanel1.Controls.Add(this.browseInputFile);
-            this.metroPanel1.Controls.Add(this.metroLabel11);
-            this.metroPanel1.Controls.Add(this.metroLabel10);
             this.metroPanel1.Controls.Add(this.metroLabel5);
             this.metroPanel1.Controls.Add(this.metroLabel4);
             this.metroPanel1.Controls.Add(this.metroLabel2);
@@ -156,7 +148,7 @@
             this.metroPanel1.Location = new System.Drawing.Point(14, 8);
             this.metroPanel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(580, 312);
+            this.metroPanel1.Size = new System.Drawing.Size(580, 257);
             this.metroPanel1.TabIndex = 4;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -168,7 +160,7 @@
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(43, 135);
+            this.metroLabel7.Location = new System.Drawing.Point(43, 78);
             this.metroLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(154, 25);
@@ -180,7 +172,7 @@
             this.numberOfReviewsCombo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numberOfReviewsCombo.FormattingEnabled = true;
             this.numberOfReviewsCombo.ItemHeight = 23;
-            this.numberOfReviewsCombo.Location = new System.Drawing.Point(417, 37);
+            this.numberOfReviewsCombo.Location = new System.Drawing.Point(417, 38);
             this.numberOfReviewsCombo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.numberOfReviewsCombo.Name = "numberOfReviewsCombo";
             this.numberOfReviewsCombo.Size = new System.Drawing.Size(53, 29);
@@ -192,7 +184,7 @@
             this.reviewListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.reviewListBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.reviewListBox.FormattingEnabled = true;
-            this.reviewListBox.Location = new System.Drawing.Point(43, 164);
+            this.reviewListBox.Location = new System.Drawing.Point(43, 107);
             this.reviewListBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.reviewListBox.Name = "reviewListBox";
             this.reviewListBox.Size = new System.Drawing.Size(491, 134);
@@ -203,79 +195,12 @@
             // 
             this.numberOfReviews.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numberOfReviews.AutoSize = true;
-            this.numberOfReviews.Location = new System.Drawing.Point(400, 143);
+            this.numberOfReviews.Location = new System.Drawing.Point(400, 86);
             this.numberOfReviews.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.numberOfReviews.Name = "numberOfReviews";
             this.numberOfReviews.Size = new System.Drawing.Size(125, 19);
             this.numberOfReviews.TabIndex = 27;
             this.numberOfReviews.Text = "0 Reviews Imported";
-            // 
-            // inputFilePath
-            // 
-            this.inputFilePath.Anchor = System.Windows.Forms.AnchorStyles.None;
-            // 
-            // 
-            // 
-            this.inputFilePath.CustomButton.Image = null;
-            this.inputFilePath.CustomButton.Location = new System.Drawing.Point(324, 2);
-            this.inputFilePath.CustomButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.inputFilePath.CustomButton.Name = "";
-            this.inputFilePath.CustomButton.Size = new System.Drawing.Size(19, 19);
-            this.inputFilePath.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.inputFilePath.CustomButton.TabIndex = 1;
-            this.inputFilePath.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.inputFilePath.CustomButton.UseSelectable = true;
-            this.inputFilePath.CustomButton.Visible = false;
-            this.inputFilePath.Lines = new string[0];
-            this.inputFilePath.Location = new System.Drawing.Point(123, 89);
-            this.inputFilePath.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.inputFilePath.MaxLength = 32767;
-            this.inputFilePath.Multiline = true;
-            this.inputFilePath.Name = "inputFilePath";
-            this.inputFilePath.PasswordChar = '\0';
-            this.inputFilePath.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.inputFilePath.SelectedText = "";
-            this.inputFilePath.SelectionLength = 0;
-            this.inputFilePath.SelectionStart = 0;
-            this.inputFilePath.Size = new System.Drawing.Size(346, 24);
-            this.inputFilePath.TabIndex = 41;
-            this.inputFilePath.UseSelectable = true;
-            this.inputFilePath.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.inputFilePath.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // browseInputFile
-            // 
-            this.browseInputFile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.browseInputFile.Location = new System.Drawing.Point(473, 89);
-            this.browseInputFile.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.browseInputFile.Name = "browseInputFile";
-            this.browseInputFile.Size = new System.Drawing.Size(61, 24);
-            this.browseInputFile.TabIndex = 40;
-            this.browseInputFile.Text = "Browse";
-            this.browseInputFile.UseSelectable = true;
-            this.browseInputFile.Click += new System.EventHandler(this.browseInputFile_Click);
-            // 
-            // metroLabel11
-            // 
-            this.metroLabel11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(45, 92);
-            this.metroLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel11.TabIndex = 39;
-            this.metroLabel11.Text = "Input File:";
-            // 
-            // metroLabel10
-            // 
-            this.metroLabel10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(67, 66);
-            this.metroLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(22, 19);
-            this.metroLabel10.TabIndex = 38;
-            this.metroLabel10.Text = "or";
             // 
             // metroLabel5
             // 
@@ -283,7 +208,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(39, 3);
+            this.metroLabel5.Location = new System.Drawing.Point(39, 4);
             this.metroLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(134, 25);
@@ -294,7 +219,7 @@
             // 
             this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(293, 41);
+            this.metroLabel4.Location = new System.Drawing.Point(293, 42);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(126, 19);
@@ -434,7 +359,7 @@
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 6;
-            this.metroPanel2.Location = new System.Drawing.Point(14, 725);
+            this.metroPanel2.Location = new System.Drawing.Point(14, 659);
             this.metroPanel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(580, 96);
@@ -582,7 +507,7 @@
             this.metroPanel3.HorizontalScrollbarBarColor = true;
             this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel3.HorizontalScrollbarSize = 6;
-            this.metroPanel3.Location = new System.Drawing.Point(14, 330);
+            this.metroPanel3.Location = new System.Drawing.Point(14, 275);
             this.metroPanel3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(580, 142);
@@ -665,7 +590,7 @@
             this.metroPanel5.HorizontalScrollbarBarColor = true;
             this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel5.HorizontalScrollbarSize = 6;
-            this.metroPanel5.Location = new System.Drawing.Point(14, 488);
+            this.metroPanel5.Location = new System.Drawing.Point(14, 425);
             this.metroPanel5.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.metroPanel5.Name = "metroPanel5";
             this.metroPanel5.Size = new System.Drawing.Size(580, 227);
@@ -697,7 +622,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(610, 831);
+            this.ClientSize = new System.Drawing.Size(610, 763);
             this.Controls.Add(this.metroPanel5);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
@@ -705,6 +630,7 @@
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MaximizeBox = false;
             this.Name = "AppIdClassification";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MARC 1.0 - Mobile App Review Classifier";
@@ -751,10 +677,6 @@
         private MetroFramework.Controls.MetroCheckBox boFramesClassification;
         private System.Windows.Forms.Label label3;
         private MetroFramework.Controls.MetroComboBox numberOfReviewsCombo;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
-        private MetroFramework.Controls.MetroButton browseInputFile;
-        private MetroFramework.Controls.MetroTextBox inputFilePath;
         private MetroFramework.Controls.MetroPanel metroPanel5;
         private System.Windows.Forms.OpenFileDialog browseLocalFile;
         private System.Windows.Forms.FolderBrowserDialog browseOutputFolderDialog;
