@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MARC", "Master ARC 1\MARC.csproj", "{7AF9204E-6202-4D6F-AB96-367630FCB4BB}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MARC Installer", "ARC Installer\ARC Installer.vdproj", "{B63970DA-F4E4-4C50-B2AB-CD079004A4A6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apple User Review Sniffer", "Apple User Review Sniffer\Apple User Review Sniffer\Apple User Review Sniffer.csproj", "{F3331D64-C161-45B2-9FCD-2F8F5E08C48C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrameNetOnline", "FrameNetOnline\FrameNetOnline\FrameNetOnline.csproj", "{61F09AE9-4D64-43B8-B676-E76C996EFC45}"
@@ -17,19 +13,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopWordRemoval", "StopWord
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WekaClassifier", "WekaClassifier\WekaClassifier\WekaClassifier.csproj", "{565DC2EF-6B3D-4247-BE5D-5BC8AC9B1D49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MARC", "MARC\MARC.csproj", "{7AF9204E-6202-4D6F-AB96-367630FCB4BB}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MARC Installer", "MARC Installer\MARC Installer.vdproj", "{D6CFD3E8-897B-481B-9107-12A792BB0B7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7AF9204E-6202-4D6F-AB96-367630FCB4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7AF9204E-6202-4D6F-AB96-367630FCB4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7AF9204E-6202-4D6F-AB96-367630FCB4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7AF9204E-6202-4D6F-AB96-367630FCB4BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B63970DA-F4E4-4C50-B2AB-CD079004A4A6}.Debug|Any CPU.ActiveCfg = Debug
-		{B63970DA-F4E4-4C50-B2AB-CD079004A4A6}.Debug|Any CPU.Build.0 = Debug
-		{B63970DA-F4E4-4C50-B2AB-CD079004A4A6}.Release|Any CPU.ActiveCfg = Release
 		{F3331D64-C161-45B2-9FCD-2F8F5E08C48C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3331D64-C161-45B2-9FCD-2F8F5E08C48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3331D64-C161-45B2-9FCD-2F8F5E08C48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -50,6 +43,12 @@ Global
 		{565DC2EF-6B3D-4247-BE5D-5BC8AC9B1D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{565DC2EF-6B3D-4247-BE5D-5BC8AC9B1D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{565DC2EF-6B3D-4247-BE5D-5BC8AC9B1D49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF9204E-6202-4D6F-AB96-367630FCB4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF9204E-6202-4D6F-AB96-367630FCB4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF9204E-6202-4D6F-AB96-367630FCB4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF9204E-6202-4D6F-AB96-367630FCB4BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6CFD3E8-897B-481B-9107-12A792BB0B7A}.Debug|Any CPU.ActiveCfg = Debug
+		{D6CFD3E8-897B-481B-9107-12A792BB0B7A}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

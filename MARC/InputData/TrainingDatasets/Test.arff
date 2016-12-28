@@ -1,0 +1,8 @@
+@relation Test
+
+@attribute text string
+@attribute @@class@@ {BugReport,FeatureRequest,Other}
+
+@data
+
+'Operational_testing ',?
