@@ -64,14 +64,14 @@ namespace WekaClassifier
         /// <param name="inputFramesList"></param>
         public WekaClassifier(List<List<string>> inputBoFList, string trainingFilePath, string directoryName, ClassifierName classificationName)
         {
-            ConstructFramesArffFile(inputBoFList, directoryName);
+            ConstructBOFArffFile(inputBoFList, directoryName);
             switch (classificationName)
             {
                 case ClassifierName.SupportVectorMachine:
-                    FilteredSVM("BOW", trainingFilePath, directoryName);
+                    FilteredSVM("BOF", trainingFilePath, directoryName);
                     break;
                 case ClassifierName.NaiveBayes:
-                    FilteredNaiveBayes("BOW", trainingFilePath, directoryName);
+                    FilteredNaiveBayes("BOF", trainingFilePath, directoryName);
                     break;
                 default:
                     break;
@@ -109,7 +109,7 @@ namespace WekaClassifier
         /// This is the method to construct BOF Arff file. Input is list of list of strings
         /// </summary>
         /// <param name="inputFrames"></param>
-        private void ConstructFramesArffFile(List<List<string>> inputFrames, string directoryName)
+        private void ConstructBOFArffFile(List<List<string>> inputFrames, string directoryName)
         {
             //var directoryName = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).ToString());
             var testDatatsetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\Test.arff";
@@ -133,6 +133,7 @@ namespace WekaClassifier
                     }
                     file.Write("',?");
                 }
+                file.Close();
             }
         }
 
@@ -205,6 +206,11 @@ namespace WekaClassifier
                 Instances trainInsts = new Instances(trainReader);
                 Instances classifyInsts = new Instances(classifyReader);
 
+
+
+                trainReader.close();
+                classifyReader.close();
+
                 trainInsts.setClassIndex(trainInsts.numAttributes() - 1);
                 
                 classifyInsts.setClassIndex(classifyInsts.numAttributes() - 1);
@@ -269,6 +275,11 @@ namespace WekaClassifier
                 Instances trainInsts = new Instances(trainReader);
                 Instances classifyInsts = new Instances(classifyReader);
 
+
+                trainReader.close();
+                classifyReader.close();
+
+
                 trainInsts.setClassIndex(trainInsts.numAttributes() - 1);
 
                 classifyInsts.setClassIndex(classifyInsts.numAttributes() - 1);
@@ -279,6 +290,8 @@ namespace WekaClassifier
                 stringtowordvector.setTFTransform(true);
                 model.setFilter(new StringToWordVector());
 
+
+                
                 weka.classifiers.Classifier smocls = new weka.classifiers.functions.SMO();
 
                 smocls.setOptions(weka.core.Utils.splitOptions("-C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"weka.classifiers.functions.supportVector.Puk -C 250007 -O 1.0 -S 1.0\""));
@@ -287,6 +300,9 @@ namespace WekaClassifier
 
                 model.setClassifier(smocls);
                 model.buildClassifier(trainInsts);
+
+
+               
 
                 for (int i = 0; i < classifyInsts.numInstances(); i++)
                 {
