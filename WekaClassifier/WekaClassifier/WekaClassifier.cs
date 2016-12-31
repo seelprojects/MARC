@@ -24,6 +24,17 @@ namespace WekaClassifier
         NaiveBayes
     }
 
+    public enum SupportVectorKernels
+    {
+        PUK,
+        Default
+    }
+
+    public enum ClassificationType
+    {
+        BOF,
+        BOW
+    }
 
     public class WekaClassifier
     {
@@ -48,10 +59,10 @@ namespace WekaClassifier
             switch (classificationName)
             {
                 case ClassifierName.SupportVectorMachine:
-                    FilteredSVM("BOW", trainingFilePath, directoryName);
+                    FilteredSVM(ClassificationType.BOW, trainingFilePath, directoryName);
                     break;
                 case ClassifierName.NaiveBayes:
-                    FilteredNaiveBayes("BOW", trainingFilePath, directoryName);
+                    FilteredNaiveBayes(ClassificationType.BOW, trainingFilePath, directoryName);
                     break;
                 default:
                     break;
@@ -68,10 +79,10 @@ namespace WekaClassifier
             switch (classificationName)
             {
                 case ClassifierName.SupportVectorMachine:
-                    FilteredSVM("BOF", trainingFilePath, directoryName);
+                    FilteredSVM(ClassificationType.BOF, trainingFilePath, directoryName);
                     break;
                 case ClassifierName.NaiveBayes:
-                    FilteredNaiveBayes("BOF", trainingFilePath, directoryName);
+                    FilteredNaiveBayes(ClassificationType.BOF, trainingFilePath, directoryName);
                     break;
                 default:
                     break;
@@ -84,7 +95,6 @@ namespace WekaClassifier
         /// <param name="inputBOW"></param>
         private void ConstructBOWArffFile(List<string> inputBOW, string directoryName)
         {
-            //var directoryName = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).ToString());
             var testDatatsetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\Test.arff";
             using (System.IO.StreamWriter file =
             new System.IO.StreamWriter(testDatatsetFilePath))
@@ -111,7 +121,6 @@ namespace WekaClassifier
         /// <param name="inputFrames"></param>
         private void ConstructBOFArffFile(List<List<string>> inputFrames, string directoryName)
         {
-            //var directoryName = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).ToString()).ToString());
             var testDatatsetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\Test.arff";
             using (System.IO.StreamWriter file =
             new System.IO.StreamWriter(testDatatsetFilePath))
@@ -178,19 +187,21 @@ namespace WekaClassifier
         /// Filtered Naive Bayes Classification with type specified. i.e. BOF or BOW
         /// </summary>
         /// <param name="type"></param>
-        private void FilteredNaiveBayes(string type, string trainingFilePath, string directoryName)
+        private void FilteredNaiveBayes(ClassificationType type, string trainingFilePath, string directoryName)
         {
             try
             {
                 var trainingDatatsetFilePath = "";
-                if (type == "BOF")
+                switch (type)
                 {
-                    trainingDatatsetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\BOF Dataset.arff";
-
-                }
-                else
-                {
-                    trainingDatatsetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\BOW Dataset.arff";
+                    case ClassificationType.BOF:
+                        trainingDatatsetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\BOF Dataset.arff";
+                        break;
+                    case ClassificationType.BOW:
+                        trainingDatatsetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\BOW Dataset.arff";
+                        break;
+                    default:
+                        break;
                 }
                 
                 var testDatasetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\Test.arff";
@@ -205,8 +216,6 @@ namespace WekaClassifier
 
                 Instances trainInsts = new Instances(trainReader);
                 Instances classifyInsts = new Instances(classifyReader);
-
-
 
                 trainReader.close();
                 classifyReader.close();
@@ -247,18 +256,22 @@ namespace WekaClassifier
         /// Filtered Support Vector Machine Classification with type specified. i.e. BOF or BOW
         /// </summary>
         /// <param name="type"></param>
-        private void FilteredSVM(string type, string trainingFilePath, string directoryName)
+        private void FilteredSVM(ClassificationType type, string trainingFilePath, string directoryName)
         {
             try
             {
                 var trainingDatatsetFilePath = "";
-                if (type == "BOF")
+
+                switch (type)
                 {
-                    trainingDatatsetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\BOF Dataset.arff";
-                }
-                else
-                {
-                    trainingDatatsetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\BOW Dataset.arff";
+                    case ClassificationType.BOF:
+                        trainingDatatsetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\BOF Dataset.arff";
+                        break;
+                    case ClassificationType.BOW:
+                        trainingDatatsetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\BOW Dataset.arff";
+                        break;
+                    default:
+                        break;
                 }
 
                 var testDatasetFilePath = directoryName.ToString() + "\\InputData\\TrainingDatasets\\Test.arff";
@@ -275,10 +288,8 @@ namespace WekaClassifier
                 Instances trainInsts = new Instances(trainReader);
                 Instances classifyInsts = new Instances(classifyReader);
 
-
                 trainReader.close();
                 classifyReader.close();
-
 
                 trainInsts.setClassIndex(trainInsts.numAttributes() - 1);
 
@@ -290,8 +301,6 @@ namespace WekaClassifier
                 stringtowordvector.setTFTransform(true);
                 model.setFilter(new StringToWordVector());
 
-
-                
                 weka.classifiers.Classifier smocls = new weka.classifiers.functions.SMO();
 
                 smocls.setOptions(weka.core.Utils.splitOptions("-C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"weka.classifiers.functions.supportVector.Puk -C 250007 -O 1.0 -S 1.0\""));
@@ -300,9 +309,6 @@ namespace WekaClassifier
 
                 model.setClassifier(smocls);
                 model.buildClassifier(trainInsts);
-
-
-               
 
                 for (int i = 0; i < classifyInsts.numInstances(); i++)
                 {
