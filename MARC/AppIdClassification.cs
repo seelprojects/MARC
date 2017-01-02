@@ -77,6 +77,8 @@ namespace Master_ARC_1
             numberOfReviewsCombo.Items.Add(300); numberOfReviewsCombo.Items.Add(350); numberOfReviewsCombo.Items.Add(400); numberOfReviewsCombo.Items.Add(450); numberOfReviewsCombo.Items.Add(500);
             numberOfReviewsCombo.SelectedIndex = 0;
 
+            svmKernelComboBox.SelectedIndex = 0;
+
             boWordsClassification.Checked = true;
             defaultTraining.Checked = true;
 
@@ -313,11 +315,16 @@ namespace Master_ARC_1
         /// <param name="e"></param>
         private void classifyCurrentReview_Click(object sender, EventArgs e)
         {
+            var selectedKernel = svmKernelComboBox.SelectedIndex == 0 ? SupportVectorKernels.PolyKernel
+                        : svmKernelComboBox.SelectedIndex == 1 ? SupportVectorKernels.Puk
+                        : SupportVectorKernels.RBFKernel;
+
+
             if (customTraining.Checked && !File.Exists(trainingFilePath.Text))
             {
                 MessageBox.Show("Please select a valid training file.");
             }
-            else if(reviewListBox.Items.Count == 0)
+            else if (reviewListBox.Items.Count == 0)
             {
                 MessageBox.Show("Please import comments to classify.");
             }
@@ -325,11 +332,12 @@ namespace Master_ARC_1
             {
                 load.Show();
                 var bwClassifyCurrent = new BackgroundWorker();
-                bwClassifyCurrent.DoWork += (o, args) 
+                bwClassifyCurrent.DoWork += (o, args)
                     => classifyCurrentUserReview(
-                        singleUserReview, 
-                        customTraining.Checked ? trainingFilePath.Text : null, 
-                        supportVectorCheckbox.Checked ? ClassifierName.SupportVectorMachine : ClassifierName.NaiveBayes
+                        singleUserReview,
+                        customTraining.Checked ? trainingFilePath.Text : null,
+                        supportVectorCheckbox.Checked ? ClassifierName.SupportVectorMachine : ClassifierName.NaiveBayes,
+                        selectedKernel
                         );
 
                 bwClassifyCurrent.RunWorkerCompleted += (o, args) => classifyCurentUserReviewUpdateControl(singleUserReview);
@@ -342,9 +350,8 @@ namespace Master_ARC_1
         /// </summary>
         /// <param name="singleUserReviewSentences"></param>
         /// <param name="trainingFilePath"></param>
-        private void classifyCurrentUserReview(List<string> singleUserReviewSentences, string trainingFilePath, ClassifierName classifierName)
+        private void classifyCurrentUserReview(List<string> singleUserReviewSentences, string trainingFilePath, ClassifierName classifierName, SupportVectorKernels supportVectorKernel)
         {
-
             allClassification = new List<string>();
             WekaClassifier.WekaClassifier classifier;
             if (boFramesClassification.Checked)
@@ -369,7 +376,7 @@ namespace Master_ARC_1
 
                     try
                     {
-                        classifier = new WekaClassifier.WekaClassifier(listOfReviewsBoF, trainingFilePath, Application.StartupPath, classifierName);
+                        classifier = new WekaClassifier.WekaClassifier(listOfReviewsBoF, trainingFilePath, Application.StartupPath, classifierName, supportVectorKernel);
 
                         foreach (string data in classifier.AllClassification)
                         {
@@ -397,7 +404,7 @@ namespace Master_ARC_1
                 BeginInvoke(new MethodInvoker(updateLoadingTextClassifier));
                 try
                 {
-                    classifier = new WekaClassifier.WekaClassifier(filteredReviews, trainingFilePath, Application.StartupPath, classifierName);
+                    classifier = new WekaClassifier.WekaClassifier(filteredReviews, trainingFilePath, Application.StartupPath, classifierName, supportVectorKernel);
 
                     foreach (string data in classifier.AllClassification)
                     {
@@ -438,7 +445,6 @@ namespace Master_ARC_1
                     finalStemOutput += stemOutput + " ";
                 }
                 text = finalStemOutput;
-
             }
             text = RemoveSpecialCharacters(text);
             return text;
@@ -544,7 +550,7 @@ namespace Master_ARC_1
         //    }
         //}
 
-       
+
 
         /// <summary>
         /// Import local reviews
@@ -586,6 +592,11 @@ namespace Master_ARC_1
             userReviewsSentenceSplit = separateIndividualSentencesToList(userReviews);
             userReviews = userReviewsSentenceSplit;
 
+            var selectedKernel = svmKernelComboBox.SelectedIndex == 0 ? SupportVectorKernels.PolyKernel
+                       : svmKernelComboBox.SelectedIndex == 1 ? SupportVectorKernels.Puk
+                       : SupportVectorKernels.RBFKernel;
+
+
             if (customTraining.Checked && !File.Exists(trainingFilePath.Text))
             {
                 MessageBox.Show("Please select a valid training file.");
@@ -610,9 +621,10 @@ namespace Master_ARC_1
                         bwClassifyAllAndExport.DoWork += (o, args)
                             => classifyAllReviewsAndExport
                             (
-                                userReviews, 
+                                userReviews,
                                 customTraining.Checked ? trainingFilePath.Text : null,
-                                supportVectorCheckbox.Checked ? ClassifierName.SupportVectorMachine : ClassifierName.NaiveBayes
+                                supportVectorCheckbox.Checked ? ClassifierName.SupportVectorMachine : ClassifierName.NaiveBayes,
+                                selectedKernel
                                 );
                         bwClassifyAllAndExport.RunWorkerCompleted += (o, args) => classifyAllAndExportUpdateControl(customTraining.Checked ? trainingFilePath.Text : null);
                         bwClassifyAllAndExport.RunWorkerAsync();
@@ -627,7 +639,7 @@ namespace Master_ARC_1
         /// </summary>
         /// <param name="userReviews"></param>
         /// <param name="trainingFilePath"></param>
-        private void classifyAllReviewsAndExport(List<string> userReviews, string trainingFilePath, ClassifierName classifierName)
+        private void classifyAllReviewsAndExport(List<string> userReviews, string trainingFilePath, ClassifierName classifierName, SupportVectorKernels supportVectorKernel)
         {
             WekaClassifier.WekaClassifier classifier;
             allClassification = new List<string>();
@@ -655,8 +667,8 @@ namespace Master_ARC_1
 
                     try
                     {
-                        classifier = new WekaClassifier.WekaClassifier(listOfReviewsBoF, trainingFilePath, Application.StartupPath, classifierName);
-                        
+                        classifier = new WekaClassifier.WekaClassifier(listOfReviewsBoF, trainingFilePath, Application.StartupPath, classifierName, supportVectorKernel);
+
 
                         foreach (string data in classifier.AllClassification)
                         {
@@ -710,7 +722,7 @@ namespace Master_ARC_1
                 BeginInvoke(new MethodInvoker(updateLoadingTextClassifier));
                 try
                 {
-                    classifier = new WekaClassifier.WekaClassifier(filteredReviews, trainingFilePath, Application.StartupPath, classifierName);
+                    classifier = new WekaClassifier.WekaClassifier(filteredReviews, trainingFilePath, Application.StartupPath, classifierName, supportVectorKernel);
 
 
                     foreach (string data in classifier.AllClassification)

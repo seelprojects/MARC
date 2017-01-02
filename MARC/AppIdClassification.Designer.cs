@@ -58,6 +58,8 @@
             this.classifyCurrentReview = new MetroFramework.Controls.MetroButton();
             this.openTrainingFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.svmKernelComboBox = new MetroFramework.Controls.MetroComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.supportVectorCheckbox = new MetroFramework.Controls.MetroCheckBox();
             this.naiveBayesCheckbox = new MetroFramework.Controls.MetroCheckBox();
@@ -80,7 +82,7 @@
             // 
             // 
             this.appIdTextBox.CustomButton.Image = null;
-            this.appIdTextBox.CustomButton.Location = new System.Drawing.Point(144, 2);
+            this.appIdTextBox.CustomButton.Location = new System.Drawing.Point(168, 2);
             this.appIdTextBox.CustomButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.appIdTextBox.CustomButton.Name = "";
             this.appIdTextBox.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -90,7 +92,7 @@
             this.appIdTextBox.CustomButton.UseSelectable = true;
             this.appIdTextBox.CustomButton.Visible = false;
             this.appIdTextBox.Lines = new string[0];
-            this.appIdTextBox.Location = new System.Drawing.Point(123, 40);
+            this.appIdTextBox.Location = new System.Drawing.Point(114, 42);
             this.appIdTextBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.appIdTextBox.MaxLength = 32767;
             this.appIdTextBox.Multiline = true;
@@ -100,7 +102,7 @@
             this.appIdTextBox.SelectedText = "";
             this.appIdTextBox.SelectionLength = 0;
             this.appIdTextBox.SelectionStart = 0;
-            this.appIdTextBox.Size = new System.Drawing.Size(166, 24);
+            this.appIdTextBox.Size = new System.Drawing.Size(190, 24);
             this.appIdTextBox.TabIndex = 0;
             this.appIdTextBox.UseSelectable = true;
             this.appIdTextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -109,7 +111,7 @@
             // importReviews
             // 
             this.importReviews.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.importReviews.Location = new System.Drawing.Point(473, 40);
+            this.importReviews.Location = new System.Drawing.Point(501, 40);
             this.importReviews.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.importReviews.Name = "importReviews";
             this.importReviews.Size = new System.Drawing.Size(61, 24);
@@ -122,7 +124,7 @@
             // 
             this.metroLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(43, 42);
+            this.metroLabel2.Location = new System.Drawing.Point(32, 48);
             this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(78, 19);
@@ -148,7 +150,7 @@
             this.metroPanel1.Location = new System.Drawing.Point(14, 8);
             this.metroPanel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(580, 257);
+            this.metroPanel1.Size = new System.Drawing.Size(595, 257);
             this.metroPanel1.TabIndex = 4;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -160,7 +162,7 @@
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(43, 78);
+            this.metroLabel7.Location = new System.Drawing.Point(32, 80);
             this.metroLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(154, 25);
@@ -172,7 +174,7 @@
             this.numberOfReviewsCombo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numberOfReviewsCombo.FormattingEnabled = true;
             this.numberOfReviewsCombo.ItemHeight = 23;
-            this.numberOfReviewsCombo.Location = new System.Drawing.Point(417, 38);
+            this.numberOfReviewsCombo.Location = new System.Drawing.Point(440, 38);
             this.numberOfReviewsCombo.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.numberOfReviewsCombo.Name = "numberOfReviewsCombo";
             this.numberOfReviewsCombo.Size = new System.Drawing.Size(53, 29);
@@ -184,10 +186,10 @@
             this.reviewListBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.reviewListBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.reviewListBox.FormattingEnabled = true;
-            this.reviewListBox.Location = new System.Drawing.Point(43, 107);
+            this.reviewListBox.Location = new System.Drawing.Point(32, 107);
             this.reviewListBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.reviewListBox.Name = "reviewListBox";
-            this.reviewListBox.Size = new System.Drawing.Size(491, 134);
+            this.reviewListBox.Size = new System.Drawing.Size(530, 134);
             this.reviewListBox.TabIndex = 27;
             this.reviewListBox.SelectedIndexChanged += new System.EventHandler(this.reviewListBox_SelectedIndexChanged_1);
             // 
@@ -195,7 +197,7 @@
             // 
             this.numberOfReviews.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numberOfReviews.AutoSize = true;
-            this.numberOfReviews.Location = new System.Drawing.Point(400, 86);
+            this.numberOfReviews.Location = new System.Drawing.Point(437, 86);
             this.numberOfReviews.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.numberOfReviews.Name = "numberOfReviews";
             this.numberOfReviews.Size = new System.Drawing.Size(125, 19);
@@ -208,7 +210,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(39, 4);
+            this.metroLabel5.Location = new System.Drawing.Point(32, 9);
             this.metroLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(134, 25);
@@ -219,7 +221,7 @@
             // 
             this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(293, 42);
+            this.metroLabel4.Location = new System.Drawing.Point(308, 42);
             this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(126, 19);
@@ -231,7 +233,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(326, 50);
+            this.label3.Location = new System.Drawing.Point(354, 50);
             this.label3.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(3, 84);
@@ -242,7 +244,7 @@
             this.boFramesClassification.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.boFramesClassification.AutoSize = true;
             this.boFramesClassification.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.boFramesClassification.Location = new System.Drawing.Point(146, 49);
+            this.boFramesClassification.Location = new System.Drawing.Point(191, 49);
             this.boFramesClassification.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.boFramesClassification.Name = "boFramesClassification";
             this.boFramesClassification.Size = new System.Drawing.Size(112, 19);
@@ -253,7 +255,7 @@
             // browseTrainingArff
             // 
             this.browseTrainingArff.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.browseTrainingArff.Location = new System.Drawing.Point(507, 101);
+            this.browseTrainingArff.Location = new System.Drawing.Point(517, 101);
             this.browseTrainingArff.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.browseTrainingArff.Name = "browseTrainingArff";
             this.browseTrainingArff.Size = new System.Drawing.Size(61, 21);
@@ -267,7 +269,7 @@
             this.boWordsClassification.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.boWordsClassification.AutoSize = true;
             this.boWordsClassification.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.boWordsClassification.Location = new System.Drawing.Point(146, 72);
+            this.boWordsClassification.Location = new System.Drawing.Point(191, 72);
             this.boWordsClassification.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.boWordsClassification.Name = "boWordsClassification";
             this.boWordsClassification.Size = new System.Drawing.Size(107, 19);
@@ -292,7 +294,7 @@
             this.trainingFilePath.CustomButton.UseSelectable = true;
             this.trainingFilePath.CustomButton.Visible = false;
             this.trainingFilePath.Lines = new string[0];
-            this.trainingFilePath.Location = new System.Drawing.Point(364, 101);
+            this.trainingFilePath.Location = new System.Drawing.Point(374, 101);
             this.trainingFilePath.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.trainingFilePath.MaxLength = 32767;
             this.trainingFilePath.Multiline = true;
@@ -313,7 +315,7 @@
             this.customTraining.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.customTraining.AutoSize = true;
             this.customTraining.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.customTraining.Location = new System.Drawing.Point(349, 72);
+            this.customTraining.Location = new System.Drawing.Point(363, 72);
             this.customTraining.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.customTraining.Name = "customTraining";
             this.customTraining.Size = new System.Drawing.Size(125, 19);
@@ -326,7 +328,7 @@
             this.defaultTraining.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.defaultTraining.AutoSize = true;
             this.defaultTraining.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.defaultTraining.Location = new System.Drawing.Point(349, 49);
+            this.defaultTraining.Location = new System.Drawing.Point(363, 49);
             this.defaultTraining.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.defaultTraining.Name = "defaultTraining";
             this.defaultTraining.Size = new System.Drawing.Size(121, 19);
@@ -340,7 +342,7 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(45, 11);
+            this.metroLabel6.Location = new System.Drawing.Point(32, 14);
             this.metroLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(183, 25);
@@ -362,7 +364,7 @@
             this.metroPanel2.Location = new System.Drawing.Point(14, 659);
             this.metroPanel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(580, 96);
+            this.metroPanel2.Size = new System.Drawing.Size(595, 96);
             this.metroPanel2.TabIndex = 28;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
@@ -374,7 +376,7 @@
             this.metroLabel9.AutoSize = true;
             this.metroLabel9.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel9.Location = new System.Drawing.Point(49, 19);
+            this.metroLabel9.Location = new System.Drawing.Point(32, 16);
             this.metroLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(254, 25);
@@ -384,7 +386,7 @@
             // browseOutputPath
             // 
             this.browseOutputPath.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.browseOutputPath.Location = new System.Drawing.Point(345, 50);
+            this.browseOutputPath.Location = new System.Drawing.Point(364, 50);
             this.browseOutputPath.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.browseOutputPath.Name = "browseOutputPath";
             this.browseOutputPath.Size = new System.Drawing.Size(57, 24);
@@ -398,7 +400,7 @@
             this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel1.Location = new System.Drawing.Point(51, 55);
+            this.metroLabel1.Location = new System.Drawing.Point(35, 54);
             this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(78, 15);
@@ -412,7 +414,7 @@
             // 
             // 
             this.outputFilePath.CustomButton.Image = null;
-            this.outputFilePath.CustomButton.Location = new System.Drawing.Point(176, 2);
+            this.outputFilePath.CustomButton.Location = new System.Drawing.Point(211, 2);
             this.outputFilePath.CustomButton.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.outputFilePath.CustomButton.Name = "";
             this.outputFilePath.CustomButton.Size = new System.Drawing.Size(19, 19);
@@ -422,7 +424,7 @@
             this.outputFilePath.CustomButton.UseSelectable = true;
             this.outputFilePath.CustomButton.Visible = false;
             this.outputFilePath.Lines = new string[0];
-            this.outputFilePath.Location = new System.Drawing.Point(143, 50);
+            this.outputFilePath.Location = new System.Drawing.Point(117, 49);
             this.outputFilePath.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.outputFilePath.MaxLength = 32767;
             this.outputFilePath.Multiline = true;
@@ -432,7 +434,7 @@
             this.outputFilePath.SelectedText = "";
             this.outputFilePath.SelectionLength = 0;
             this.outputFilePath.SelectionStart = 0;
-            this.outputFilePath.Size = new System.Drawing.Size(198, 24);
+            this.outputFilePath.Size = new System.Drawing.Size(233, 24);
             this.outputFilePath.TabIndex = 42;
             this.outputFilePath.UseSelectable = true;
             this.outputFilePath.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -441,7 +443,7 @@
             // classifyAllAndExport
             // 
             this.classifyAllAndExport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.classifyAllAndExport.Location = new System.Drawing.Point(406, 50);
+            this.classifyAllAndExport.Location = new System.Drawing.Point(428, 50);
             this.classifyAllAndExport.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.classifyAllAndExport.Name = "classifyAllAndExport";
             this.classifyAllAndExport.Size = new System.Drawing.Size(134, 24);
@@ -456,7 +458,7 @@
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.Location = new System.Drawing.Point(45, 15);
+            this.metroLabel8.Location = new System.Drawing.Point(31, 15);
             this.metroLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(183, 25);
@@ -468,7 +470,7 @@
             this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel3.Location = new System.Drawing.Point(51, 50);
+            this.metroLabel3.Location = new System.Drawing.Point(32, 54);
             this.metroLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(156, 15);
@@ -478,7 +480,7 @@
             // classifyCurrentReview
             // 
             this.classifyCurrentReview.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.classifyCurrentReview.Location = new System.Drawing.Point(389, 196);
+            this.classifyCurrentReview.Location = new System.Drawing.Point(420, 196);
             this.classifyCurrentReview.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.classifyCurrentReview.Name = "classifyCurrentReview";
             this.classifyCurrentReview.Size = new System.Drawing.Size(145, 21);
@@ -491,6 +493,8 @@
             // 
             this.metroPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel3.Controls.Add(this.metroLabel10);
+            this.metroPanel3.Controls.Add(this.svmKernelComboBox);
             this.metroPanel3.Controls.Add(this.label1);
             this.metroPanel3.Controls.Add(this.supportVectorCheckbox);
             this.metroPanel3.Controls.Add(this.naiveBayesCheckbox);
@@ -510,18 +514,45 @@
             this.metroPanel3.Location = new System.Drawing.Point(14, 275);
             this.metroPanel3.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(580, 142);
+            this.metroPanel3.Size = new System.Drawing.Size(595, 142);
             this.metroPanel3.TabIndex = 37;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 7;
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.Location = new System.Drawing.Point(44, 76);
+            this.metroLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel10.TabIndex = 38;
+            this.metroLabel10.Text = "Kernel:";
+            // 
+            // svmKernelComboBox
+            // 
+            this.svmKernelComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.svmKernelComboBox.FormattingEnabled = true;
+            this.svmKernelComboBox.ItemHeight = 23;
+            this.svmKernelComboBox.Items.AddRange(new object[] {
+            "PolyKernel",
+            "Puk",
+            "RBFKernel"});
+            this.svmKernelComboBox.Location = new System.Drawing.Point(93, 72);
+            this.svmKernelComboBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.svmKernelComboBox.Name = "svmKernelComboBox";
+            this.svmKernelComboBox.Size = new System.Drawing.Size(87, 29);
+            this.svmKernelComboBox.TabIndex = 38;
+            this.svmKernelComboBox.UseSelectable = true;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(118, 49);
+            this.label1.Location = new System.Drawing.Point(183, 49);
             this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(3, 84);
@@ -532,12 +563,12 @@
             this.supportVectorCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.supportVectorCheckbox.AutoSize = true;
             this.supportVectorCheckbox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.supportVectorCheckbox.Location = new System.Drawing.Point(49, 50);
+            this.supportVectorCheckbox.Location = new System.Drawing.Point(28, 50);
             this.supportVectorCheckbox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.supportVectorCheckbox.Name = "supportVectorCheckbox";
-            this.supportVectorCheckbox.Size = new System.Drawing.Size(54, 19);
+            this.supportVectorCheckbox.Size = new System.Drawing.Size(146, 19);
             this.supportVectorCheckbox.TabIndex = 39;
-            this.supportVectorCheckbox.Text = "SVM";
+            this.supportVectorCheckbox.Text = "Support V. Machine";
             this.supportVectorCheckbox.UseSelectable = true;
             // 
             // naiveBayesCheckbox
@@ -545,12 +576,12 @@
             this.naiveBayesCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.naiveBayesCheckbox.AutoSize = true;
             this.naiveBayesCheckbox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.naiveBayesCheckbox.Location = new System.Drawing.Point(49, 72);
+            this.naiveBayesCheckbox.Location = new System.Drawing.Point(29, 109);
             this.naiveBayesCheckbox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.naiveBayesCheckbox.Name = "naiveBayesCheckbox";
-            this.naiveBayesCheckbox.Size = new System.Drawing.Size(43, 19);
+            this.naiveBayesCheckbox.Size = new System.Drawing.Size(98, 19);
             this.naiveBayesCheckbox.TabIndex = 38;
-            this.naiveBayesCheckbox.Text = "NB";
+            this.naiveBayesCheckbox.Text = "Naive Bayes";
             this.naiveBayesCheckbox.UseSelectable = true;
             // 
             // removeStopwordsCheckbox
@@ -558,7 +589,7 @@
             this.removeStopwordsCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.removeStopwordsCheckbox.AutoSize = true;
             this.removeStopwordsCheckbox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.removeStopwordsCheckbox.Location = new System.Drawing.Point(160, 95);
+            this.removeStopwordsCheckbox.Location = new System.Drawing.Point(205, 95);
             this.removeStopwordsCheckbox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.removeStopwordsCheckbox.Name = "removeStopwordsCheckbox";
             this.removeStopwordsCheckbox.Size = new System.Drawing.Size(143, 19);
@@ -571,7 +602,7 @@
             this.stemmingCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.stemmingCheckBox.AutoSize = true;
             this.stemmingCheckBox.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.stemmingCheckBox.Location = new System.Drawing.Point(160, 115);
+            this.stemmingCheckBox.Location = new System.Drawing.Point(205, 115);
             this.stemmingCheckBox.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.stemmingCheckBox.Name = "stemmingCheckBox";
             this.stemmingCheckBox.Size = new System.Drawing.Size(87, 19);
@@ -593,7 +624,7 @@
             this.metroPanel5.Location = new System.Drawing.Point(14, 425);
             this.metroPanel5.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.metroPanel5.Name = "metroPanel5";
-            this.metroPanel5.Size = new System.Drawing.Size(580, 227);
+            this.metroPanel5.Size = new System.Drawing.Size(595, 227);
             this.metroPanel5.TabIndex = 38;
             this.metroPanel5.VerticalScrollbarBarColor = true;
             this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
@@ -608,12 +639,12 @@
             this.singleUserReviewListView.GridLines = true;
             this.singleUserReviewListView.HideSelection = false;
             this.singleUserReviewListView.LabelWrap = false;
-            this.singleUserReviewListView.Location = new System.Drawing.Point(51, 70);
+            this.singleUserReviewListView.Location = new System.Drawing.Point(32, 70);
             this.singleUserReviewListView.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.singleUserReviewListView.Name = "singleUserReviewListView";
             this.singleUserReviewListView.ShowGroups = false;
             this.singleUserReviewListView.ShowItemToolTips = true;
-            this.singleUserReviewListView.Size = new System.Drawing.Size(484, 124);
+            this.singleUserReviewListView.Size = new System.Drawing.Size(530, 124);
             this.singleUserReviewListView.TabIndex = 46;
             this.singleUserReviewListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -622,7 +653,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(610, 763);
+            this.ClientSize = new System.Drawing.Size(625, 763);
             this.Controls.Add(this.metroPanel5);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
@@ -686,5 +717,7 @@
         private MetroFramework.Controls.MetroCheckBox supportVectorCheckbox;
         private MetroFramework.Controls.MetroCheckBox naiveBayesCheckbox;
         private System.Windows.Forms.Label label1;
+        private MetroFramework.Controls.MetroComboBox svmKernelComboBox;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
     }
 }

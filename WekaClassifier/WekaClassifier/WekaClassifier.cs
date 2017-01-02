@@ -26,8 +26,10 @@ namespace WekaClassifier
 
     public enum SupportVectorKernels
     {
-        PUK,
-        Default
+        PolyKernel,
+        Puk,
+        RBFKernel
+
     }
 
     public enum ClassificationType
@@ -53,13 +55,13 @@ namespace WekaClassifier
         /// This is the constructor for BOW single review classification
         /// </summary>
         /// <param name="singleReviewBOW"></param>
-        public WekaClassifier(List<string> inputBoWList, string trainingFilePath, string directoryName, ClassifierName classificationName)
+        public WekaClassifier(List<string> inputBoWList, string trainingFilePath, string directoryName, ClassifierName classificationName, SupportVectorKernels supportVectorKernel)
         {
             ConstructBOWArffFile(inputBoWList, directoryName);
             switch (classificationName)
             {
                 case ClassifierName.SupportVectorMachine:
-                    FilteredSVM(ClassificationType.BOW, trainingFilePath, directoryName);
+                    FilteredSVM(ClassificationType.BOW, trainingFilePath, directoryName, supportVectorKernel);
                     break;
                 case ClassifierName.NaiveBayes:
                     FilteredNaiveBayes(ClassificationType.BOW, trainingFilePath, directoryName);
@@ -73,13 +75,13 @@ namespace WekaClassifier
         /// This is the constructor for BOF  user reviews.
         /// </summary>
         /// <param name="inputFramesList"></param>
-        public WekaClassifier(List<List<string>> inputBoFList, string trainingFilePath, string directoryName, ClassifierName classificationName)
+        public WekaClassifier(List<List<string>> inputBoFList, string trainingFilePath, string directoryName, ClassifierName classificationName, SupportVectorKernels supportVectorKernel)
         {
             ConstructBOFArffFile(inputBoFList, directoryName);
             switch (classificationName)
             {
                 case ClassifierName.SupportVectorMachine:
-                    FilteredSVM(ClassificationType.BOF, trainingFilePath, directoryName);
+                    FilteredSVM(ClassificationType.BOF, trainingFilePath, directoryName, supportVectorKernel);
                     break;
                 case ClassifierName.NaiveBayes:
                     FilteredNaiveBayes(ClassificationType.BOF, trainingFilePath, directoryName);
@@ -256,7 +258,7 @@ namespace WekaClassifier
         /// Filtered Support Vector Machine Classification with type specified. i.e. BOF or BOW
         /// </summary>
         /// <param name="type"></param>
-        private void FilteredSVM(ClassificationType type, string trainingFilePath, string directoryName)
+        private void FilteredSVM(ClassificationType type, string trainingFilePath, string directoryName, SupportVectorKernels supportVectorKernel)
         {
             try
             {
@@ -303,7 +305,23 @@ namespace WekaClassifier
 
                 weka.classifiers.Classifier smocls = new weka.classifiers.functions.SMO();
 
-                smocls.setOptions(weka.core.Utils.splitOptions("-C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"weka.classifiers.functions.supportVector.Puk -C 250007 -O 1.0 -S 1.0\""));
+                
+                switch (supportVectorKernel)
+                {
+                    case SupportVectorKernels.PolyKernel:
+                        smocls.setOptions(weka.core.Utils.splitOptions("-C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0\""));
+                        break;
+                    case SupportVectorKernels.Puk:
+                        smocls.setOptions(weka.core.Utils.splitOptions("-C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"weka.classifiers.functions.supportVector.Puk -C 250007 -O 1.0 -S 1.0\""));
+                        break;
+                    case SupportVectorKernels.RBFKernel:
+                        smocls.setOptions(weka.core.Utils.splitOptions("-C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"weka.classifiers.functions.supportVector.RBFKernel -C 250007 -G 0.01\""));
+                        break;
+                    default:
+                        break;
+                }
+
+
 
                 //smocls.setOptions(weka.core.Utils.splitOptions("-C 1.0 -L 0.0010 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0\""));
 
