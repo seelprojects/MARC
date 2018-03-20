@@ -3,7 +3,7 @@ MARC is a Mobile Application Review Classifier that automatically classifies use
 
 ## Features
 
-####Automatic User Review Extraction
+#### Automatic User Review Extraction
 MARC provides a feature for extracting recent user reviews from the iOS app store. Simply enter the app store ID for any app in the iOS app store and MARC will import upto 500 most recent user reviews.
 
 #### Text Processing Features
